@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'my-angular-demo'`, () => {
+  it(`should have as title 'angular-admin'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('my-angular-demo');
+    expect(app.title).toEqual('angular-admin');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('my-angular-demo app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angular-admin app is running!');
   });
 });
