@@ -1,0 +1,5 @@
+{
+  "/nokia-iot-building": {
+    "target": "http://172.16.208.194:17004"
+  }
+}
