@@ -16,12 +16,14 @@ const routes: Routes = [
         path: 'ang-countup',
         component: AngCountupComponent,
         data: {
+          breadcrumb: 'ang-countup 组件'
         }
       },
       {
         path: 'ang-preview',
         component: AngPreviewComponent,
         data: {
+          breadcrumb: 'ang-preview',
         }
       }
     ]

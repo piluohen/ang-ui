@@ -1,3 +1,11 @@
-<p>
-  ang-countup works!
-</p>
+<div class="breadcrumb">
+  <nz-breadcrumb [nzAutoGenerate]="true">
+  </nz-breadcrumb>
+</div>
+
+<div class="layout-content">
+  <button nz-button nzType="primary" nzSize="small" (click)="handleChange()">改变随机值</button>
+  <div>
+    <ang-countup [endVal]="value"></ang-countup>
+  </div>
+</div>

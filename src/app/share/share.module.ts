@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { HttpExceptionInterceptor } from './httpExceptionInterceptor';
 import { TrustHtmlPipe, TrustScriptPipe, TrustStylePipe, TrustUrlPipe } from './trust-resource.pipe';
 import { LayoutComponent } from '../components/layout/layout.component';
+import { AngUiModule } from '../components/ang-ui/ang-ui.module';
 
 /**
  * 公共组件
@@ -23,7 +24,7 @@ const COMPONENT = [
  * 第三方模块
  * @type {NgZorroAntdModule[]}
  */
-const THIRD_MODULE = [NgZorroAntdModule];
+const THIRD_MODULE = [NgZorroAntdModule, AngUiModule];
 
 /**
  * 公共指令

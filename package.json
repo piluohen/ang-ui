@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.4",
     "@angular/platform-browser-dynamic": "~8.2.4",
     "@angular/router": "~8.2.4",
+    "countup.js": "^2.0.4",
     "echarts": "^4.3.0",
     "ng-zorro-antd": "^8.1.2",
     "ngx-echarts": "^4.2.1",

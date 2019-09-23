@@ -24,14 +24,8 @@ export class LayoutComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    console.log(this.activatedRoute);
   }
 
   ngOnInit() {
-  }
-
-  handleLink(path: string): void {
-    console.log(path);
-    this.router.navigate([path]);
   }
 }

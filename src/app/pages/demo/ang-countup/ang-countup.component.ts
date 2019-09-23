@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AngCountupComponent implements OnInit {
 
+  value: any = 500;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleChange() {
+    this.value = Math.floor(Math.random() * 2000);
   }
 
 }
