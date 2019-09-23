@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-admin": {
+    "ang-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-admin",
+            "outputPath": "dist/ang-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -89,18 +89,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-admin:build"
+            "browserTarget": "ang-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-admin:build:production"
+              "browserTarget": "ang-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-admin:build"
+            "browserTarget": "ang-ui:build"
           }
         },
         "test": {
@@ -137,16 +137,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-admin:serve"
+            "devServerTarget": "ang-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-admin:serve:production"
+              "devServerTarget": "ang-ui:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-admin"
+  "defaultProject": "ang-ui"
 }

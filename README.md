@@ -1,22 +1,14 @@
-# angular-admin
+# Ang-ui
 
-让编码更快乐！
+基于Angular、Ant Design for Angular拓展的组件库
 
-## 部署
+## 安装
 
 ``` bash
 
-## 安装依赖
+## 安装
 
-npm install
-
-## 启动服务
-
-npm run start
-
-## 打包部署
-
-npm run build
+npm install ang-ui -S
 
 ```
 

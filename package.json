@@ -1,15 +1,17 @@
 {
-  "name": "angular-admin",
-  "version": "0.0.0",
+  "name": "ang-ui",
+  "version": "0.0.1",
+  "description": "An Components for Angular",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200 --proxy-config proxy.conf.json --open",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib": "ng-packagr -p ng-package.json"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.4",
     "@angular/common": "~8.2.4",
@@ -21,9 +23,10 @@
     "@angular/router": "~8.2.4",
     "countup.js": "^2.0.4",
     "echarts": "^4.3.0",
+    "ng-packagr": "^5.5.1",
     "ng-zorro-antd": "^8.1.2",
     "ngx-echarts": "^4.2.1",
-    "rxjs": "~6.4.0",
+    "rxjs": "^6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

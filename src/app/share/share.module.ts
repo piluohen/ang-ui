@@ -9,7 +9,8 @@ import { RouterModule } from '@angular/router';
 import { HttpExceptionInterceptor } from './httpExceptionInterceptor';
 import { TrustHtmlPipe, TrustScriptPipe, TrustStylePipe, TrustUrlPipe } from './trust-resource.pipe';
 import { LayoutComponent } from '../components/layout/layout.component';
-import { AngUiModule } from '../components/ang-ui/ang-ui.module';
+import { AngUiModule } from 'components/ang-ui.module';
+
 
 /**
  * 公共组件
