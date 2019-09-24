@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgZorroModule } from 'components/ng-zorro.module';
+import { NgZorroModule } from '../ng-zorro.module';
 
 import { AngPreviewComponent } from './ang-preview.component';
 
