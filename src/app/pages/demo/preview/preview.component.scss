@@ -1,0 +1,18 @@
+@import 'src/assets/scss/var.scss';
+
+.img-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item {
+    width: 20%;
+    height: 160px;
+    @include flexCenter;
+
+    img {
+      display: inline-block;
+      width: 120px;
+      height: 100%;
+    }
+  }
+}

@@ -1,11 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/assets/scss/var.scss";
+
 .breadcrumb {
   padding: 10px 20px;
-  background-color: #ffffff;
+  background-color: $white;
 }
 
 .layout-content {
   margin: 20px;
   padding: 20px;
-  background-color: #fff;
+  background-color: $white;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+.color-success {
+  color: $success;
+}
+
+.color-danger {
+  color: $danger;
+}
+
+.color-warning {
+  color: $warning;
+}
+
+.color-info {
+  color: $info;
+}
+
+.color-title {
+  color: $title;
+}
+
+.color-content {
+  color: $content;
+}
+
+.color-disabled {
+  color: $disabled;
+}
+
+.color-border {
+  color: $border;
 }

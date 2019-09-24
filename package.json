@@ -23,7 +23,7 @@
     "ng-zorro-antd": "^8.1.2",
     "ngx-echarts": "^4.2.1"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "@angular/animations": "~8.2.4",
     "@angular/common": "~8.2.4",
     "@angular/compiler": "~8.2.4",

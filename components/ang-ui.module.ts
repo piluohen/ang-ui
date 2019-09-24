@@ -1,10 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { AngCountupModule } from './ang-countup/ang-countup.module';
+import { AngPreviewModule } from './ang-preview/ang-preview.module';
 
 @NgModule({
   exports: [
-    AngCountupModule
+    AngCountupModule,
+    AngPreviewModule
   ]
 })
 export class AngUiModule {

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AngCountupComponent } from './ang-countup/ang-countup.component';
-import { AngPreviewComponent } from './ang-preview/ang-preview.component';
+import { CountupComponent } from './countup/countup.component';
+import { PreviewComponent } from './preview/preview.component';
+import { ColorComponent } from './color/color.component';
 
 const routes: Routes = [
   {
@@ -9,21 +10,28 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/demo/ang-countup',
+        redirectTo: '/demo/color',
         pathMatch: 'full'
       },
       {
+        path: 'color',
+        component: ColorComponent,
+        data: {
+          breadcrumb: '颜色'
+        }
+      },
+      {
         path: 'ang-countup',
-        component: AngCountupComponent,
+        component: CountupComponent,
         data: {
           breadcrumb: 'ang-countup 组件'
         }
       },
       {
         path: 'ang-preview',
-        component: AngPreviewComponent,
+        component: PreviewComponent,
         data: {
-          breadcrumb: 'ang-preview',
+          breadcrumb: 'ang-preview 组件',
         }
       }
     ]

@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { ShareModule } from 'src/app/share/share.module';
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoComponent } from './demo.component';
-import { AngCountupComponent } from './ang-countup/ang-countup.component';
-import { AngPreviewComponent } from './ang-preview/ang-preview.component';
+import { CountupComponent } from './countup/countup.component';
+import { PreviewComponent } from './preview/preview.component';
+import { ColorComponent } from './color/color.component';
 
 
 @NgModule({
@@ -14,8 +15,9 @@ import { AngPreviewComponent } from './ang-preview/ang-preview.component';
   providers: [],
   declarations: [
     DemoComponent,
-    AngCountupComponent,
-    AngPreviewComponent
+    CountupComponent,
+    PreviewComponent,
+    ColorComponent
   ],
   entryComponents: [DemoComponent]
 })
