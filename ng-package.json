@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+  "lib": {
+    "entryFile": "./components/ang-ui.module.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib", "angular", "countup.js", "ng-zorro-antd", "echarts", "ngx-echarts"
+  ]
+}
