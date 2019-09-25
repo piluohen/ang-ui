@@ -10,20 +10,27 @@ export class AngCountupComponent implements OnInit, OnChanges {
 
   instance = null;
 
+  // 开始值
   @Input() startVal = 0;
+  // 结束值
   @Input() endVal: number;
-  @Input() duration = 2;
+  // 持续时间
+  @Input() duration = 1000;
+  // 完全展示回调
   @Output() ready: EventEmitter<any> = new EventEmitter();
+
+  delay: number;
 
   constructor(
     private el: ElementRef
   ) { }
 
   ngOnInit() {
+    this.delay = this.duration / 1000;
     this.create();
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes: any) {
     const value = changes.endVal.currentValue;
     if (this.instance) {
       this.instance.update(value);
@@ -34,6 +41,7 @@ export class AngCountupComponent implements OnInit, OnChanges {
     this.instance = null;
   }
 
+  // 生成
   create() {
     if (this.instance) {
       return;
@@ -44,14 +52,14 @@ export class AngCountupComponent implements OnInit, OnChanges {
       this.endVal,
       {
         startVal: this.startVal,
-        duration: this.duration
+        duration: this.delay
       }
     );
     if (instance.error) {
       return;
     }
     this.instance = instance;
-    if (this.duration < 0) {
+    if (this.delay < 0) {
       this.ready.emit({ instance, CountUp });
       return;
     }
@@ -59,7 +67,7 @@ export class AngCountupComponent implements OnInit, OnChanges {
       instance.start(() => {
         this.ready.emit({ instance, CountUp });
       });
-    }, this.duration);
+    }, this.delay);
   }
 
 }
