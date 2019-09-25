@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/demo/ang-countup'
+    redirectTo: '/demo/color'
   },
   {
     path: 'demo',

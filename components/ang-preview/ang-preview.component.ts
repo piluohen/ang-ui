@@ -26,8 +26,7 @@ export class AngPreviewComponent implements OnInit {
     return this.modeVisible;
   }
 
-  @Output()
-  visibleChange: EventEmitter<any> = new EventEmitter();
+  @Output() visibleChange: EventEmitter<any> = new EventEmitter();
 
   imgList: any[] = [];
 

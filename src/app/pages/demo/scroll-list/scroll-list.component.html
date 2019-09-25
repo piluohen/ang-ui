@@ -1,0 +1,15 @@
+<div class="breadcrumb">
+  <nz-breadcrumb [nzAutoGenerate]="true">
+  </nz-breadcrumb>
+</div>
+
+<div class="layout-content">
+  <ang-scroll-list [data]="list" [nzRenderItem]="nzRenderItem">
+    <ng-template #nzRenderItem let-item>
+      <div class="list-item">
+        <span>{{item.title}}</span>
+        <span>{{item.desc}}</span>
+      </div>
+    </ng-template>
+  </ang-scroll-list>
+</div>

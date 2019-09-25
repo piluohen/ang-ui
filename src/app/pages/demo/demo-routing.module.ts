@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CountupComponent } from './countup/countup.component';
 import { PreviewComponent } from './preview/preview.component';
 import { ColorComponent } from './color/color.component';
+import { ScrollListComponent } from './scroll-list/scroll-list.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,13 @@ const routes: Routes = [
         component: PreviewComponent,
         data: {
           breadcrumb: 'ang-preview 组件',
+        }
+      },
+      {
+        path: 'ang-scroll-list',
+        component: ScrollListComponent,
+        data: {
+          breadcrumb: 'ang-scroll-list 组件',
         }
       }
     ]

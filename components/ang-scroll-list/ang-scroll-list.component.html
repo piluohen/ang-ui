@@ -1,0 +1,12 @@
+<div class="ang-scroll-list" [ngStyle]="listStyle"
+  (mouseover)="handleMouseover()" (mouseout)="handleMouseout()">
+  <div class="ang-scroll-list-content"
+    [ngStyle]="contentStyle" (transitionend)="handleEnd()">
+    <div class="ang-scroll-list-item" [ngStyle]="itemStyle"
+      *ngFor="let item of totalList; index as index"
+      (click)="handleClick(item)">
+      <ng-template [ngTemplateOutlet]="nzRenderItem" [ngTemplateOutletContext]="{ $implicit: item, index: index }">
+      </ng-template>
+    </div>
+  </div>
+</div>
