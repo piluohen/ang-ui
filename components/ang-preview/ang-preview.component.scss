@@ -1,7 +1,7 @@
 @import 'src/assets/scss/var.scss';
 
-::ng-deep .hn-preview-wrap {
-  .hn-preview {
+::ng-deep .ang-preview-wrap {
+  .ang-preview {
     padding: 0;
     width: 100%;
     height: 100%;
@@ -47,7 +47,7 @@
       }
     }
 
-    .hn-preview-btn {
+    .ang-preview-btn {
       @include flexCenter;
       flex: 0 0 60px;
       width: 60px;

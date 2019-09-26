@@ -3,7 +3,7 @@ import { CountUp } from 'countup.js';
 
 @Component({
   selector: 'ang-countup',
-  template: `<span class="hn-countup"></span>`
+  template: `<span class="ang-countup"></span>`
 })
 
 export class AngCountupComponent implements OnInit, OnChanges {
@@ -46,7 +46,7 @@ export class AngCountupComponent implements OnInit, OnChanges {
     if (this.instance) {
       return;
     }
-    const dom = this.el.nativeElement.querySelector('.hn-countup');
+    const dom = this.el.nativeElement.querySelector('.ang-countup');
     const instance = new CountUp(
       dom,
       this.endVal,
