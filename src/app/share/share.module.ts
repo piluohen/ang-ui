@@ -11,7 +11,6 @@ import { TrustHtmlPipe, TrustScriptPipe, TrustStylePipe, TrustUrlPipe } from './
 import { LayoutComponent } from '../components/layout/layout.component';
 import { AngUiModule } from 'components/ang-ui.module';
 
-
 /**
  * 公共组件
  * @type {any[]}
