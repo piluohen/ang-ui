@@ -30,7 +30,7 @@ export class AngScrollListComponent implements OnInit {
   // 滚动延迟
   @Input() delay = 2000;
 
-  @Input() nzRenderItem: TemplateRef<void>;
+  @Input() renderItem: TemplateRef<void>;
   // 滚动项click事件
   @Output() click: EventEmitter<any> = new EventEmitter();
 
@@ -48,21 +48,29 @@ export class AngScrollListComponent implements OnInit {
   };
   contentStyle = {};
 
-  contentHeight = this.itemHeight * this.count;
-  scrollHeight = this.scrollCount * this.itemHeight;
-  listStyle = {
-    height: this.contentHeight + 'px'
-  };
-  itemStyle = {
-    height: this.itemHeight + 'px'
-  };
+  contentHeight: any;
+  scrollHeight: any;
+  listStyle: any;
+  itemStyle: any;
 
   timer: any = null;
 
   constructor() { }
 
   ngOnInit() {
+    this.initData();
     this.reset();
+  }
+
+  initData() {
+    this.contentHeight = this.itemHeight * this.count;
+    this.scrollHeight = this.scrollCount * this.itemHeight;
+    this.listStyle = {
+      height: this.contentHeight + 'px'
+    };
+    this.itemStyle = {
+      height: this.itemHeight + 'px'
+    };
   }
 
   /**
