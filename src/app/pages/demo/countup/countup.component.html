@@ -4,25 +4,10 @@
 </div>
 
 <div class="layout-content">
+  <h2>示例</h2>
   <button nz-button nzType="primary" nzSize="small" (click)="handleChange()">改变随机值</button>
-  <div>
+  <div style="padding: 10px 0 20px 0">
     <ang-countup [endVal]="value"></ang-countup>
   </div>
-  <div>
-    <markdown ngPreserveWhitespaces>
-      # markdown
-      ```bash
-      ##sdsd
-      <div>是多少</div>
-
-
-      1. 是多少
-      2. 是的
-      ```
-
-      ```typescript
-      const myProp: string = 'value';
-      ```
-    </markdown>
-  </div>
+  <markdown ngPreserveWhitespaces>{{demoMarkdown}}</markdown>
 </div>

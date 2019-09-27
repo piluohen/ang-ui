@@ -9,6 +9,8 @@ export class CountupComponent implements OnInit {
 
   value: any = 500;
 
+  demoMarkdown = require('raw-loader!./docs/demo.md').default;
+
   constructor() { }
 
   ngOnInit() {
