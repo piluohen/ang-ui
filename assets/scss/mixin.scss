@@ -1,0 +1,29 @@
+// 混入居中
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin  justifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin beforeAfter {
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+}

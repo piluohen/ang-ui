@@ -1,0 +1,17 @@
+// 基础配色
+$primary: #1890FF;
+$success: #56C51F;
+$warning: #f9a132;
+$danger: #FF4D4F;
+$info: #8a92a5;
+
+$white: #ffffff;
+$black: #333333;
+$purple: #8543E0;
+
+$border: #E8E8E8;
+$title: $black;
+$content: rgba($black, .6);
+$disabled: rgba($black, .3);
+
+@import './mixin';
