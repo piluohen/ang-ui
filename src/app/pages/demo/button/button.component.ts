@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare const require: any;
+
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',

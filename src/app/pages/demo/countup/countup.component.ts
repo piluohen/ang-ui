@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare const require: any;
+
 @Component({
   selector: 'app-countup',
   templateUrl: './countup.component.html',
@@ -8,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 export class CountupComponent implements OnInit {
 
   value: any = 500;
-
   apiMarkdown = require('raw-loader!./docs/api.md').default;
 
   constructor() { }
