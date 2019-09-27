@@ -15,6 +15,8 @@ export class ButtonComponent implements OnInit {
 
   ghostMarkdown = require('raw-loader!./docs/ghost.md').default;
 
+  apiMarkdown = require('raw-loader!./docs/api.md').default;
+
   constructor() { }
 
   ngOnInit() {
