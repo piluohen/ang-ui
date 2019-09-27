@@ -8,8 +8,7 @@
   [nzBlock]="block"
   [ngClass]="angClass"
   [disabled]="disabled"
-  (click)="handleClick()"
-  class="ang-btn">
+  (click)="handleClick()">
   <i *ngIf="icon" nz-icon [nzType]="icon" nzTheme="outline"></i>
   <ng-content></ng-content>
 </button>

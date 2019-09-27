@@ -4,6 +4,23 @@
 </div>
 
 <div class="layout-content">
+  <h2>ant-button 默认用法</h2>
+  <div class="button-list">
+    <div class="button-list-item">
+      <button nz-button nzType="default">默认按钮</button>
+      <button nz-button nzType="primary">primary</button>
+      <button nz-button nzType="dashed">dashed</button>
+      <button nz-button nzType="danger">danger</button>
+      <button nz-button nzType="link">link</button>
+    </div>
+    <div class="button-list-item">
+      <button nz-button nzType="default" [disabled]="true">默认按钮</button>
+      <button nz-button nzType="primary" [disabled]="true">primary</button>
+      <button nz-button nzType="dashed" [disabled]="true">dashed</button>
+      <button nz-button nzType="danger" [disabled]="true">danger</button>
+      <button nz-button nzType="link" [disabled]="true">link</button>
+    </div>
+  </div>
   <h2>基础用法</h2>
   <div class="button-list">
     <div class="button-list-item">
@@ -13,6 +30,8 @@
       <ang-button type="warning">警告按钮</ang-button>
       <ang-button type="danger">危险按钮</ang-button>
       <ang-button type="info">信息按钮</ang-button>
+      <ang-button type="dashed">dashed按钮</ang-button>
+      <ang-button type="link">链接按钮</ang-button>
     </div>
     <div class="button-list-item">
       <ang-button [disabled]="true">默认按钮</ang-button>
@@ -21,6 +40,8 @@
       <ang-button type="warning" [disabled]="true">警告按钮</ang-button>
       <ang-button type="danger" [disabled]="true">危险按钮</ang-button>
       <ang-button type="info" [disabled]="true">信息按钮</ang-button>
+      <ang-button type="dashed" [disabled]="true">dashed按钮</ang-button>
+      <ang-button type="link" [disabled]="true">链接按钮</ang-button>
     </div>
   </div>
 
@@ -68,6 +89,8 @@
       <ang-button type="warning" [ghost]="true">警告按钮</ang-button>
       <ang-button type="danger" [ghost]="true">危险按钮</ang-button>
       <ang-button type="info" [ghost]="true">信息按钮</ang-button>
+      <ang-button type="dashed" [ghost]="true">dashed按钮</ang-button>
+      <ang-button type="link" [ghost]="true">链接按钮</ang-button>
     </div>
     <div class="button-list-item">
       <ang-button [ghost]="true" [disabled]="true">默认按钮</ang-button>
@@ -76,6 +99,8 @@
       <ang-button type="warning" [ghost]="true" [disabled]="true">警告按钮</ang-button>
       <ang-button type="danger" [ghost]="true" [disabled]="true">危险按钮</ang-button>
       <ang-button type="info" [ghost]="true" [disabled]="true">信息按钮</ang-button>
+      <ang-button type="dashed" [ghost]="true" [disabled]="true">dashed按钮</ang-button>
+      <ang-button type="link" [ghost]="true" [disabled]="true">链接按钮</ang-button>
     </div>
   </div>
 

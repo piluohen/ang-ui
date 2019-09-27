@@ -6,6 +6,7 @@
   background-color: $color;
 
   &:hover {
+    color: #ffffff;
     border-color: rgba($color, .8);
     background-color: rgba($color, .8);
   }
@@ -29,10 +30,6 @@
   &.ant-btn[disabled] {
     border-color: rgba($color, .6);
     background-color: rgba($color, .6);
-
-    &:hover {
-      color: #ffffff;
-    }
   }
 }
 
@@ -44,22 +41,22 @@
   }
 }
 
-.ant-btn-primary {
+::ng-deep .ang-btn-primary {
   @include mixinAngBtn($primary);
 }
 
-.ant-btn-success {
+::ng-deep .ang-btn-success {
   @include mixinAngBtn($success);
 }
 
-.ant-btn-warning {
+::ng-deep .ang-btn-warning {
   @include mixinAngBtn($warning);
 }
 
-.ant-btn-danger {
+::ng-deep .ang-btn-danger {
   @include mixinAngBtn($danger);
 }
 
-.ant-btn-info {
+::ng-deep .ang-btn-info {
   @include mixinAngBtn($info);
 }

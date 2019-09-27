@@ -23,11 +23,13 @@ export class AngButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setClass();
   }
 
   setClass() {
     this.angClass = {
-      [`ant-btn-${this.type}`]: this.type,
+      'ang-btn': true,
+      [`ang-btn-${this.type}`]: this.type,
     };
   }
 
