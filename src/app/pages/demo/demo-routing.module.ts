@@ -4,6 +4,7 @@ import { CountupComponent } from './countup/countup.component';
 import { PreviewComponent } from './preview/preview.component';
 import { ColorComponent } from './color/color.component';
 import { ScrollListComponent } from './scroll-list/scroll-list.component';
+import { ButtonComponent } from './button/button.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,13 @@ const routes: Routes = [
         component: ColorComponent,
         data: {
           breadcrumb: '颜色'
+        }
+      },
+      {
+        path: 'ang-button',
+        component: ButtonComponent,
+        data: {
+          breadcrumb: 'ang-button 组件',
         }
       },
       {

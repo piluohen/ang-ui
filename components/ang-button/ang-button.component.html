@@ -1,0 +1,14 @@
+<button
+  nz-button
+  [nzType]="type"
+  [nzGhost]="ghost"
+  [nzLoading]="loading"
+  [nzShape]="shape"
+  [nzSize]="size"
+  [nzBlock]="block"
+  [ngClass]="angClass"
+  (click)="handleClick()"
+  class="ang-btn">
+  <i *ngIf="icon" nz-icon [nzType]="icon" nzTheme="outline"></i>
+  <ng-content></ng-content>
+</button>

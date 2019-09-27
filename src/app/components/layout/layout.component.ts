@@ -15,6 +15,7 @@ export class LayoutComponent implements OnInit {
       title: 'demo', icon: 'dashboard', open: true,
       children: [
         { title: 'color', path: '/demo/color' },
+        { title: 'ang-button', path: '/demo/ang-button' },
         { title: 'ang-countup', path: '/demo/ang-countup' },
         { title: 'ang-preview', path: '/demo/ang-preview' },
         { title: 'ang-scroll-list', path: '/demo/ang-scroll-list' }

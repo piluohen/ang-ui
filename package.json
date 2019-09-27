@@ -9,7 +9,7 @@
   "description": "An Components for Angular",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0 --port 4200 --proxy-config proxy.conf.json --open",
+    "start": "ng serve --host 0.0.0.0 --port 3600 --proxy-config proxy.conf.json --open",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,7 +20,7 @@
   "dependencies": {
     "countup.js": "^2.0.4",
     "echarts": "^4.3.0",
-    "ng-zorro-antd": "^8.1.2",
+    "ng-zorro-antd": "^8.3.1",
     "ngx-echarts": "^4.2.1"
   },
   "devDependencies": {

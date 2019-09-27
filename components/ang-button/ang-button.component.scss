@@ -1,0 +1,44 @@
+@import 'src/assets/scss/var.scss';
+
+::ng-deep .ang-btn {
+  .anticon {
+    margin-right: 8px;
+  }
+
+  &>.anticon+span {
+    margin: 0;
+  }
+}
+
+.ant-btn-success {
+  color: #ffffff;
+  border-color: $success;
+  background-color: $success;
+
+  &:hover {
+    border-color: rgba($success, .8);
+    background-color: rgba($success, .8);
+  }
+}
+
+.ant-btn-warning {
+  color: #ffffff;
+  border-color: $warning;
+  background-color: $warning;
+
+  &:hover {
+    border-color: rgba($warning, .8);
+    background-color: rgba($warning, .8);
+  }
+}
+
+.ant-btn-info {
+  color: #ffffff;
+  border-color: $info;
+  background-color: $info;
+
+  &:hover {
+    border-color: rgba($info, .8);
+    background-color: rgba($info, .8);
+  }
+}
