@@ -14,6 +14,7 @@ export class AngButtonComponent implements OnInit {
   @Input() size = 'default';
   @Input() block = false;
   @Input() icon = '';
+  @Input() disabled = false;
 
   @Output() click: EventEmitter<any> = new EventEmitter();
 
@@ -26,7 +27,7 @@ export class AngButtonComponent implements OnInit {
 
   setClass() {
     this.angClass = {
-      [`ant-btn-${this.type}`]: this.type
+      [`ant-btn-${this.type}`]: this.type,
     };
   }
 

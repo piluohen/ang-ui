@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  markdown = require('raw-loader!./demo.md').default;
+  baseMarkdown = require('raw-loader!./docs/base.md').default;
+
+  iconMarkdown = require('raw-loader!./docs/icon.md').default;
+
+  sizeMarkdown = require('raw-loader!./docs/size.md').default;
+
+  ghostMarkdown = require('raw-loader!./docs/ghost.md').default;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.markdown);
   }
 
 }

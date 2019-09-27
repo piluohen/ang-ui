@@ -1,44 +1,65 @@
 @import 'src/assets/scss/var.scss';
 
-::ng-deep .ang-btn {
-  .anticon {
-    margin-right: 8px;
+@mixin mixinAngBtn($color) {
+  color: #ffffff;
+  border-color: $color;
+  background-color: $color;
+
+  &:hover {
+    border-color: rgba($color, .8);
+    background-color: rgba($color, .8);
   }
 
-  &>.anticon+span {
-    margin: 0;
+  &.ant-btn-background-ghost {
+    color: $color;
+
+    &:hover {
+      color: rgba($color, .8)
+    }
+
+    &.ant-btn[disabled] {
+      color: rgba($color, .6);
+
+      &:hover {
+        color: rgba($color, .6)
+      }
+    }
   }
+
+  &.ant-btn[disabled] {
+    border-color: rgba($color, .6);
+    background-color: rgba($color, .6);
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+::ng-deep .ang-btn {
+
+  .anticon+span,
+  span+.anticon {
+    margin-left: 8px;
+  }
+}
+
+.ant-btn-primary {
+  @include mixinAngBtn($primary);
 }
 
 .ant-btn-success {
-  color: #ffffff;
-  border-color: $success;
-  background-color: $success;
-
-  &:hover {
-    border-color: rgba($success, .8);
-    background-color: rgba($success, .8);
-  }
+  @include mixinAngBtn($success);
 }
 
 .ant-btn-warning {
-  color: #ffffff;
-  border-color: $warning;
-  background-color: $warning;
+  @include mixinAngBtn($warning);
+}
 
-  &:hover {
-    border-color: rgba($warning, .8);
-    background-color: rgba($warning, .8);
-  }
+.ant-btn-danger {
+  @include mixinAngBtn($danger);
 }
 
 .ant-btn-info {
-  color: #ffffff;
-  border-color: $info;
-  background-color: $info;
-
-  &:hover {
-    border-color: rgba($info, .8);
-    background-color: rgba($info, .8);
-  }
+  @include mixinAngBtn($info);
 }
