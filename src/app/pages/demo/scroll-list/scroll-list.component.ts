@@ -9,6 +9,8 @@ export class ScrollListComponent implements OnInit {
 
   list: any = [];
 
+  apiMarkdown = require('raw-loader!./docs/api.md').default;
+
   constructor() { }
 
   ngOnInit() {

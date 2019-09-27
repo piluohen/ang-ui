@@ -4,12 +4,13 @@
 </div>
 
 <div class="layout-content">
+  <h2>示例</h2>
   <ang-scroll-list
     [data]="list"
     [renderItem]="renderItem"
-    [count]="4"
-    [itemHeight]="40"
-    [delay]="1000">
+    [count]="6"
+    [itemHeight]="60"
+    [delay]="2000">
     <ng-template #renderItem let-item>
       <div class="list-item">
         <span>{{item.title}}</span>
@@ -17,4 +18,6 @@
       </div>
     </ng-template>
   </ang-scroll-list>
+
+  <markdown>{{apiMarkdown}}</markdown>
 </div>

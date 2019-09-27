@@ -4,15 +4,6 @@
 <ang-countup [endVal]="value"></ang-countup>
 ```
 
-<!-- // 开始值
-  @Input() startVal = 0; 
-  // 结束值
-  @Input() endVal: number; 
-  // 持续时间
-  @Input() duration = 1000; 
-  // 完全展示回调
-  @Output() ready: EventEmitter<any> = new EventEmitter(); -->
-
 ## Api
 
 | 参数     |     描述     |  类型  | 可选值 | 必须  | 默认值   |
