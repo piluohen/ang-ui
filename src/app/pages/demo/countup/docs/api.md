@@ -1,4 +1,4 @@
-## 用法
+
 
 ``` HTML
 <ang-countup [endVal]="value"></ang-countup>

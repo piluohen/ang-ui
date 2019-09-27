@@ -18,6 +18,8 @@ export class PreviewComponent implements OnInit {
 
   previewIndex = 0;
 
+  apiMarkdown = require('raw-loader!./docs/api.md').default;
+
   constructor() { }
 
   ngOnInit() {
