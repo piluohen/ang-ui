@@ -5,6 +5,7 @@ import { PreviewComponent } from './preview/preview.component';
 import { ColorComponent } from './color/color.component';
 import { ScrollListComponent } from './scroll-list/scroll-list.component';
 import { ButtonComponent } from './button/button.component';
+import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,13 @@ const routes: Routes = [
         component: ScrollListComponent,
         data: {
           breadcrumb: 'ang-scroll-list 组件',
+        }
+      },
+      {
+        path: 'ang-checkbox-group',
+        component: CheckboxGroupComponent,
+        data: {
+          breadcrumb: 'ang-checkbox-group 组件'
         }
       }
     ]

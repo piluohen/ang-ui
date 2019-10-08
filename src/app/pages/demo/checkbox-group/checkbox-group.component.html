@@ -1,0 +1,14 @@
+<div class="breadcrumb">
+  <nz-breadcrumb [nzAutoGenerate]="true">
+  </nz-breadcrumb>
+</div>
+
+<div class="layout-content">
+  <div>
+    <!-- <nz-checkbox-group [(ngModel)]="data" (ngModelChange)="log(checkOptionsOne)"></nz-checkbox-group> -->
+  </div>
+  <div>
+    <ang-checkbox-group [options]="data" [(ngModel)]="value" (ngModelChange)="log(checkOptionsOne)">
+    </ang-checkbox-group>
+  </div>
+</div>

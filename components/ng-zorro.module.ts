@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NZ_I18N, zh_CN } from 'ng-zorro-antd';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzCarouselModule } from 'ng-zorro-antd/carousel';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzButtonModule } from 'ng-zorro-antd/button';
+import {
+  NZ_I18N,
+  zh_CN,
+  NzIconModule,
+  NzCarouselModule,
+  NzModalModule,
+  NzButtonModule,
+  NzCheckboxModule
+} from 'ng-zorro-antd';
 
 const ngZorro = [
   NzIconModule,
   NzCarouselModule,
   NzModalModule,
-  NzButtonModule
+  NzButtonModule,
+  NzCheckboxModule
 ];
 
 @NgModule({

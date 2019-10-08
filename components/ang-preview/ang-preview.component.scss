@@ -12,7 +12,7 @@
     }
 
     .ant-modal-close-x {
-      color: $info;
+      color: rgba($white, .5);
 
       &:hover {
         color: $white;
@@ -54,7 +54,7 @@
       height: 60px;
       border-radius: 50%;
       cursor: pointer;
-      color: $info;
+      color: rgba($white, .5);
       background-color: rgba($white, .2);
 
       &-prev {

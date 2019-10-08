@@ -13,26 +13,7 @@ import { PreviewComponent } from './preview/preview.component';
 import { ColorComponent } from './color/color.component';
 import { ScrollListComponent } from './scroll-list/scroll-list.component';
 import { ButtonComponent } from './button/button.component';
-
-
-// export function markedOptions(): MarkedOptions {
-//   const renderer = new MarkedRenderer();
-
-//   renderer.blockquote = (text: string) => {
-//     return '<blockquote class="blockquote"><p>' + text + '</p></blockquote>';
-//   };
-
-//   return {
-//     renderer,
-//     gfm: true,
-//     tables: true,
-//     breaks: false,
-//     pedantic: false,
-//     sanitize: false,
-//     smartLists: true,
-//     smartypants: false,
-//   };
-// }
+import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
 
 @NgModule({
   imports: [
@@ -40,13 +21,6 @@ import { ButtonComponent } from './button/button.component';
     DemoRoutingModule,
     HttpClientModule,
     MarkdownModule.forChild()
-    // MarkdownModule.forRoot({
-    //   loader: HttpClient,
-    //   markedOptions: {
-    //     provide: MarkedOptions,
-    //     useFactory: markedOptions,
-    //   },
-    // })
   ],
   providers: [],
   declarations: [
@@ -55,7 +29,8 @@ import { ButtonComponent } from './button/button.component';
     PreviewComponent,
     ColorComponent,
     ScrollListComponent,
-    ButtonComponent
+    ButtonComponent,
+    CheckboxGroupComponent
   ],
   entryComponents: [DemoComponent]
 })
