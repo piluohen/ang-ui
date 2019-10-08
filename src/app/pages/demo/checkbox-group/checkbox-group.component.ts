@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox-group',
@@ -9,23 +10,36 @@ export class CheckboxGroupComponent implements OnInit {
 
   @ViewChild('group', { static: false }) group: any;
 
-  data: any = [
-    { label: 'A', value: 'A' },
-    { label: 'B', value: 'B' },
-    { label: 'C', value: 'C' }
-  ];
+  options: any = [];
 
-  value: any = ['A'];
+  value: any = ['A', 'E'];
 
-  constructor() { }
+  validateForm: FormGroup;
+
+  baseMarkdown = require('raw-loader!./docs/base.md').default;
+  formMarkdown = require('raw-loader!./docs/form.md').default;
+  apiMarkdown = require('raw-loader!./docs/api.md').default;
+
+  constructor(
+    private fb: FormBuilder,
+  ) {
+    this.validateForm = this.fb.group({
+      checkbox: [this.value]
+    });
+    this.options = ['A', 'B', 'C', 'D', 'E', 'F'].map(item => {
+      return { label: `${item}选项`, value: item };
+    });
+  }
 
   ngOnInit() {
   }
 
-  log(value: any): void {
-    console.log(value);
-    console.log('data', this.data);
-    console.log('value', this.value);
+  handleChange(data: any): void {
+    console.log(data);
+  }
+
+  handleSave(): void {
+    console.log(this.validateForm.value);
   }
 
 }
