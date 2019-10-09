@@ -14,13 +14,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { InputBoolean } from 'ng-zorro-antd/core';
 
-// export interface NzCheckBoxOptionInterface {
-//   label: string;
-//   value: string;
-//   checked?: boolean;
-//   disabled?: boolean;
-// }
-
 @Component({
   selector: 'ang-checkbox-group',
   templateUrl: './ang-checkbox-group.component.html',
@@ -39,27 +32,9 @@ export class AngCheckboxGroupComponent implements ControlValueAccessor, OnInit, 
 
   @Input() options: any[] = [];
 
-  @Input() @InputBoolean() nzDisabled = false;
+  @Input() @InputBoolean() disabled = false;
 
   data: any[] = [];
-
-  onChange: (value: any) => void = () => null;
-
-  onTouched: () => any = () => null;
-
-
-  onOptionChange(): void {
-    const data = this.options.filter(item => {
-      return !item.disabled && item.checked;
-    }).map(item => {
-      return item.value;
-    });
-    this.onChange(data);
-  }
-
-  trackByOption(_index: number, option: any): string {
-    return option.value;
-  }
 
   constructor(
     private elementRef: ElementRef,
@@ -82,6 +57,29 @@ export class AngCheckboxGroupComponent implements ControlValueAccessor, OnInit, 
     this.focusMonitor.stopMonitoring(this.elementRef);
   }
 
+  /**
+   * change方法
+   */
+  onChange: (value: any) => void = () => null;
+
+  /**
+   * touch方法
+   */
+  onTouched: () => any = () => null;
+
+  /**
+   * 索引
+   * @param _index 索引值
+   * @param option 子项
+   */
+  trackByOption(_index: number, option: any): string {
+    return option.value;
+  }
+
+  /**
+   * 写入value方法
+   * @param value 值
+   */
   writeValue(value: any[]): void {
     if (!value) {
       return;
@@ -93,17 +91,41 @@ export class AngCheckboxGroupComponent implements ControlValueAccessor, OnInit, 
     this.cdr.markForCheck();
   }
 
+  /**
+   * 注册change方法
+   * @param fn change方法
+   */
   registerOnChange(fn: (_: any[]) => {}): void {
     this.onChange = fn;
   }
 
+  /**
+   * 注册touch事件
+   * @param fn touch方法
+   */
   registerOnTouched(fn: () => {}): void {
     this.onTouched = fn;
   }
 
+  /**
+   * 设置禁用状态
+   * @param isDisabled 是否禁用
+   */
   setDisabledState(isDisabled: boolean): void {
-    this.nzDisabled = isDisabled;
+    this.disabled = isDisabled;
     this.cdr.markForCheck();
+  }
+
+  /**
+   * checkbox选中值改变操作
+   */
+  handleChange(): void {
+    const data = this.options.filter(item => {
+      return item.checked;
+    }).map(item => {
+      return item.value;
+    });
+    this.onChange(data);
   }
 }
 

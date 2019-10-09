@@ -14,7 +14,7 @@ export class CheckboxGroupComponent implements OnInit {
 
   options: any = [];
 
-  value: any = ['A', 'E'];
+  value: any = ['A', 'E', 'F'];
 
   validateForm: FormGroup;
 
@@ -28,8 +28,8 @@ export class CheckboxGroupComponent implements OnInit {
     this.validateForm = this.fb.group({
       checkbox: [this.value]
     });
-    this.options = ['A', 'B', 'C', 'D', 'E', 'F'].map(item => {
-      return { label: `${item}选项`, value: item };
+    this.options = ['A', 'B', 'C', 'D', 'E', 'F'].map((item, index) => {
+      return { label: `${item}选项`, value: item, disabled: index % 2 === 1 };
     });
   }
 
