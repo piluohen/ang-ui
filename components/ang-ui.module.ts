@@ -5,6 +5,7 @@ import { AngPreviewModule } from './ang-preview/ang-preview.module';
 import { AngScrollListModule } from './ang-scroll-list/ang-scroll-list.module';
 import { AngButtonModule } from './ang-button/ang-button.module';
 import { AngCheckboxGroupModule } from './ang-checkbox-group/ang-checkbox-group.module';
+import { AngTableModule } from './ang-table/ang-table.module';
 
 @NgModule({
   exports: [
@@ -12,7 +13,8 @@ import { AngCheckboxGroupModule } from './ang-checkbox-group/ang-checkbox-group.
     AngPreviewModule,
     AngScrollListModule,
     AngButtonModule,
-    AngCheckboxGroupModule
+    AngCheckboxGroupModule,
+    AngTableModule
   ]
 })
 export class AngUiModule {

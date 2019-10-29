@@ -1,0 +1,12 @@
+@import 'src/assets/scss/var.scss';
+
+::ng-deep .hn-table {
+  .ant-table-pagination.ant-pagination {
+    width: 100%;
+    text-align: right;
+
+    .ant-pagination-total-text {
+      float: left;
+    }
+  }
+}
