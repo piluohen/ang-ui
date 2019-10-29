@@ -8,7 +8,8 @@ import {
   NzCarouselModule,
   NzModalModule,
   NzButtonModule,
-  NzCheckboxModule
+  NzCheckboxModule,
+  NzTableModule
 } from 'ng-zorro-antd';
 
 const ngZorro = [
@@ -16,7 +17,8 @@ const ngZorro = [
   NzCarouselModule,
   NzModalModule,
   NzButtonModule,
-  NzCheckboxModule
+  NzCheckboxModule,
+  NzTableModule
 ];
 
 @NgModule({
