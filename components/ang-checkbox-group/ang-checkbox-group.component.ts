@@ -34,7 +34,15 @@ export class AngCheckboxGroupComponent implements ControlValueAccessor, OnInit, 
 
   @Input() @InputBoolean() disabled = false;
 
+  @Input() @InputBoolean() checkAll = false;
+
+  @Input() checkAllLabel = '全选';
+
   data: any[] = [];
+
+  allChecked = false;
+
+  indeterminate = false;
 
   constructor(
     private elementRef: ElementRef,
@@ -87,6 +95,7 @@ export class AngCheckboxGroupComponent implements ControlValueAccessor, OnInit, 
     this.options.forEach(item => {
       item.checked = value.includes(item.value);
     });
+    this.changeAllCheked(value);
     this.data = value;
     this.cdr.markForCheck();
   }
@@ -120,12 +129,45 @@ export class AngCheckboxGroupComponent implements ControlValueAccessor, OnInit, 
    * checkbox选中值改变操作
    */
   handleChange(): void {
-    const data = this.options.filter(item => {
+    const data = this.filterData(this.options);
+
+    this.changeAllCheked(data);
+    this.onChange(data);
+  }
+
+
+
+  handleAllChecked(type: any): void {
+    this.options.forEach(item => {
+      if (!item.disabled) {
+        item.checked = type;
+      }
+    });
+    const data = this.filterData(this.options);
+    this.onChange(data);
+  }
+
+  changeAllCheked(data: any[]): void {
+    const arr = this.options.filter(item => {
+      return !item.disabled || (item.disabled && item.checked);
+    });
+    if (data.length === arr.length) {
+      this.allChecked = true;
+      this.indeterminate = false;
+    } else if (data.length === 0) {
+      this.allChecked = false;
+      this.indeterminate = false;
+    } else {
+      this.indeterminate = true;
+    }
+  }
+
+  filterData(data: any[]) {
+    return data.filter(item => {
       return item.checked;
     }).map(item => {
       return item.value;
     });
-    this.onChange(data);
   }
 }
 

@@ -1,3 +1,12 @@
+<label
+  *ngIf="checkAll"
+  nz-checkbox
+  [(nzChecked)]="allChecked"
+  (nzCheckedChange)="handleAllChecked($event)"
+  [nzIndeterminate]="indeterminate">
+  {{checkAllLabel}}
+</label>
+
 <label nz-checkbox
   class="ant-checkbox-group-item"
   *ngFor="let option of options; trackBy:trackByOption"
