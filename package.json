@@ -19,11 +19,11 @@
   "private": false,
   "dependencies": {
     "countup.js": "^2.0.4",
-    "echarts": "^4.3.0",
-    "ng-zorro-antd": "^8.3.1",
-    "ngx-echarts": "^4.2.1"
+    "echarts": "^4.4.0",
+    "ng-zorro-antd": "^8.5.0",
+    "ngx-echarts": "^4.2.2"
   },
-  "deepDependencies": {
+  "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.3",
     "@angular/animations": "~8.2.4",
     "@angular/cli": "~8.3.3",

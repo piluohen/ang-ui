@@ -9,6 +9,7 @@
     <ang-checkbox-group [options]="options" [checkAll]="true" [(ngModel)]="value"
       (ngModelChange)="handleChange($event)">
     </ang-checkbox-group>
+    <div style="margin-bottom: 20px;">值：{{value}}</div>
   </div>
 
   <markdown ngPreserveWhitespaces>{{baseMarkdown}}</markdown>
