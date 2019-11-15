@@ -1,15 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-ang-table',
+  selector: 'ang-table',
   templateUrl: './ang-table.component.html',
   styleUrls: ['./ang-table.component.scss']
 })
 export class AngTableComponent implements OnInit, OnChanges {
-
   @Input() data: any[] = [];
 
-  @Input() url: any;
+  @Input() api: any;
 
   @Input() params: any;
 
@@ -21,7 +20,13 @@ export class AngTableComponent implements OnInit, OnChanges {
 
   @Input() showSelect = true;
 
+  @Input() showPagination = true;
+
   @Input() scroll: any;
+
+  @Input() footer: any;
+
+  @Input() bordered = false;
 
   @Output() checkChange: EventEmitter<any> = new EventEmitter();
 
@@ -44,34 +49,51 @@ export class AngTableComponent implements OnInit, OnChanges {
     pageIndex: 1
   };
 
-  constructor(
-  ) {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.tableColumns = this.columns;
-    if (this.url) {
+    if (this.api) {
       this.getList();
     } else {
-      this.tableData = this.data;
+      this.tableData = this.data || [];
+      this.initCheck();
     }
   }
 
   ngOnChanges(changes: any) {
-    const { currentValue, firstChange } = changes.params;
-    if (!firstChange) {
-      this.params = currentValue;
-      this.getList(true);
+    if (changes.params) {
+      const { currentValue, firstChange } = changes.params;
+      if (!firstChange) {
+        this.params = currentValue;
+        this.getList(true);
+      }
     }
+    if (changes.data) {
+      const { currentValue, firstChange } = changes.data;
+      if (!firstChange) {
+        this.tableData = currentValue;
+        this.initCheck();
+      }
+    }
+  }
+
+  /**
+   * 初始化check
+   */
+  initCheck() {
+    this.checkedData = this.tableData || [];
+    this.checkAll(false);
   }
 
   /**
    * 刷新全选
    */
   refreshStatus(): void {
-    this.isAllDisplayDataChecked = this.checkedData.length > 0 ? this.checkedData
-      .filter(item => !item.disabled)
-      .every(item => this.mapOfCheckedId[item.id]) : false;
+    this.isAllDisplayDataChecked =
+      this.checkedData.length > 0
+        ? this.checkedData.filter(item => !item.disabled).every(item => this.mapOfCheckedId[item.id])
+        : false;
     this.isIndeterminate =
       this.checkedData.filter(item => !item.disabled).some(item => this.mapOfCheckedId[item.id]) &&
       !this.isAllDisplayDataChecked;
@@ -111,23 +133,21 @@ export class AngTableComponent implements OnInit, OnChanges {
       ...this.params,
       ...param
     };
-
-    // this.http.get(this.url, requestParams).subscribe((res) => {
-    //   if (res.success) {
-    //     const data = res.data;
-    //     if (data) {
-    //       this.pagination.total = data[this.totalKey];
-    //       this.tableData = data[this.contentKey].map((item, i) => {
-    //         return {
-    //           ...item,
-    //           number: (data.pageNo - 1) * this.pagination.pageSize + i + 1,
-    //         };
-    //       });
-    //       this.checkedData = this.tableData || [];
-    //       this.checkAll(false);
-    //     }
-    //   }
-    //   this.loading = false;
-    // });
+    this.api(requestParams).subscribe(res => {
+      if (res.success) {
+        const data = res.data;
+        if (data) {
+          this.pagination.total = data[this.totalKey];
+          this.tableData = data[this.contentKey].map((item, i) => {
+            return {
+              ...item,
+              number: (data.pageNo - 1) * this.pagination.pageSize + i + 1
+            };
+          });
+          this.initCheck();
+        }
+      }
+      this.loading = false;
+    });
   }
 }

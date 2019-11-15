@@ -1,16 +1,19 @@
-<div class="hn-table">
+<div class="ang-table">
   <nz-table
     #basicTable
     [nzData]="tableData"
+    [nzShowPagination]="showPagination"
     [nzFrontPagination]="false"
     nzShowSizeChanger
+    [nzBordered]="bordered"
     [nzScroll]="scroll"
     [nzShowTotal]="totalTemp"
     [nzTotal]="pagination.total"
     [(nzPageIndex)]="pagination.pageIndex"
     [(nzPageSize)]="pagination.pageSize"
     (nzPageIndexChange)="getList()"
-    (nzPageSizeChange)="getList(true)">
+    (nzPageSizeChange)="getList(true)"
+    [nzFooter]="footer">
     <thead>
       <tr>
         <th
