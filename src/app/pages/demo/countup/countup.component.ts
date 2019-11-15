@@ -8,17 +8,16 @@ declare const require: any;
   styleUrls: ['./countup.component.scss']
 })
 export class CountupComponent implements OnInit {
-
   value: any = 500;
+  value1 = 435.45;
   apiMarkdown = require('raw-loader!./docs/api.md').default;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   handleChange() {
     this.value = Math.floor(Math.random() * 2000);
+    this.value1 = Math.random() * 2000;
   }
-
 }

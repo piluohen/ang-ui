@@ -32,10 +32,10 @@
     }
 
     .ant-carousel {
-      @include alignCenter;
+      @include alignItems;
 
       .slick-slider .slick-track {
-        @include alignCenter;
+        @include alignItems;
         min-width: 100% !important;
       }
 

@@ -7,7 +7,10 @@
   <h2>示例</h2>
   <button nz-button nzType="primary" nzSize="small" (click)="handleChange()">改变随机值</button>
   <div style="padding: 10px 0 20px 0">
+    整数：
     <ang-countup [endVal]="value"></ang-countup>
+    保留小数位：
+    <ang-countup [endVal]="value1" [decimalPlaces]="2"></ang-countup>
   </div>
   <markdown ngPreserveWhitespaces>{{apiMarkdown}}</markdown>
 </div>

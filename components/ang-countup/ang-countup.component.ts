@@ -3,11 +3,11 @@ import { CountUp } from 'countup.js';
 
 @Component({
   selector: 'ang-countup',
-  template: `<span class="ang-countup"></span>`
+  template: `
+    <span class="ang-countup"></span>
+  `
 })
-
 export class AngCountupComponent implements OnInit, OnChanges {
-
   instance = null;
 
   // 开始值
@@ -16,14 +16,14 @@ export class AngCountupComponent implements OnInit, OnChanges {
   @Input() endVal: number;
   // 持续时间
   @Input() duration = 1000;
+  // 小数位
+  @Input() decimalPlaces = 0;
   // 完全展示回调
   @Output() ready: EventEmitter<any> = new EventEmitter();
 
   delay: number;
 
-  constructor(
-    private el: ElementRef
-  ) { }
+  constructor(private el: ElementRef) {}
 
   ngOnInit() {
     this.delay = this.duration / 1000;
@@ -47,14 +47,11 @@ export class AngCountupComponent implements OnInit, OnChanges {
       return;
     }
     const dom = this.el.nativeElement.querySelector('.ang-countup');
-    const instance = new CountUp(
-      dom,
-      this.endVal,
-      {
-        startVal: this.startVal,
-        duration: this.delay
-      }
-    );
+    const instance = new CountUp(dom, this.endVal, {
+      startVal: this.startVal,
+      duration: this.delay,
+      decimalPlaces: this.decimalPlaces
+    });
     if (instance.error) {
       return;
     }
@@ -69,5 +66,4 @@ export class AngCountupComponent implements OnInit, OnChanges {
       });
     }, this.delay);
   }
-
 }

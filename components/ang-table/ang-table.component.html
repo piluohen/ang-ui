@@ -38,7 +38,8 @@
           [(nzChecked)]="mapOfCheckedId[data.id]"
           [nzDisabled]="data.disabled"
           (nzCheckedChange)="refreshStatus()"></td>
-        <td *ngFor="let item of tableColumns" [nzAlign]="item.align" [nzLeft]="item.left" [nzRight]="item.right">
+        <td *ngFor="let item of tableColumns;index as index" [nzAlign]="item.align" [nzLeft]="item.left"
+          [nzRight]="item.right">
           <span *ngIf="!item.render">{{item.format ? item.format(data) : data[item.key]}}</span>
           <ng-template [ngIf]="item.render" [ngTemplateOutlet]="item.render"
             [ngTemplateOutletContext]="{ $implicit: {data: data, item: item}, index: index }">
