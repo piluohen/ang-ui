@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "src/assets/scss/var.scss";
+@import 'src/assets/scss/var.scss';
 
 .breadcrumb {
   padding: 10px 20px;
@@ -46,4 +46,8 @@
 
 .color-border {
   color: $border;
+}
+
+pre {
+  max-height: 400px;
 }

@@ -10,8 +10,6 @@ declare const require: any;
 })
 export class TableComponent implements OnInit {
   @ViewChild('table', { static: true }) table: any;
-  @ViewChild('linkTemp', { static: true }) linkTemp: any;
-  @ViewChild('operateTemp', { static: true }) operateTemp: any;
   getListApi: any;
   columns: any[] = [
     { title: '名称', key: 'name' },
@@ -26,6 +24,8 @@ export class TableComponent implements OnInit {
 
   params: any = {};
 
+  baseMarkdown = require('raw-loader!./docs/base.md').default;
+  interfaceMarkdown = require('raw-loader!./docs/interface.md').default;
   apiMarkdown = require('raw-loader!./docs/api.md').default;
 
   constructor(private http: HttpClient) {
@@ -34,7 +34,22 @@ export class TableComponent implements OnInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    const params: any = {
+      pageSize: 10,
+      pageNo: 1
+    };
+    this.getListApi(params).subscribe((res: any) => {
+      if (res.success) {
+        const data = res.data.list;
+        this.tableData = data;
+      }
+    });
+  }
 
   handleView(scope: any = {}): void {
     window.open(scope.data[scope.item.key]);

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'ang-table',
@@ -10,9 +10,9 @@ export class AngTableComponent implements OnInit, OnChanges {
 
   @Input() api: any;
 
-  @Input() params: any;
+  @Input() params: any = {};
 
-  @Input() columns: any;
+  @Input() columns: any[] = [];
 
   @Input() totalKey: any = 'total';
 
@@ -22,7 +22,7 @@ export class AngTableComponent implements OnInit, OnChanges {
 
   @Input() showPagination = true;
 
-  @Input() scroll: any;
+  @Input() scroll: any = {};
 
   @Input() footer: any;
 
