@@ -28,6 +28,8 @@ export class AngTableComponent implements OnInit, OnChanges {
 
   @Input() bordered = false;
 
+  @Input() render: any = {};
+
   @Output() checkChange: EventEmitter<any> = new EventEmitter();
 
   isAllDisplayDataChecked = false;
@@ -52,13 +54,11 @@ export class AngTableComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    this.tableColumns = this.columns;
-    if (this.api) {
-      this.getList();
-    } else {
-      this.tableData = this.data || [];
-      this.initCheck();
-    }
+    this.tableColumns = this.columns.map(item => {
+      item.render = this.render[item.renderKey];
+      return item;
+    });
+    this.getList();
   }
 
   ngOnChanges(changes: any) {
@@ -66,16 +66,79 @@ export class AngTableComponent implements OnInit, OnChanges {
       const { currentValue, firstChange } = changes.params;
       if (!firstChange) {
         this.params = currentValue;
-        this.getList(true);
+        this.getInterfaceList(true);
       }
     }
     if (changes.data) {
       const { currentValue, firstChange } = changes.data;
       if (!firstChange) {
-        this.tableData = currentValue;
-        this.initCheck();
+        this.data = currentValue;
+        this.getLocalData();
       }
     }
+  }
+
+  /**
+   * 获取数据
+   * @param reset 是否重置列表
+   */
+  getList(reset: boolean = false) {
+    if (reset) {
+      this.pagination.pageIndex = 1;
+    }
+    if (this.api && this.data.length === 0) {
+      this.getInterfaceList();
+    } else {
+      this.getLocalData();
+    }
+  }
+
+  /**
+   * 获取本地传入数据
+   * @param data 本地数据
+   */
+  getLocalData(): void {
+    if (this.showPagination) {
+      const { pageSize, pageIndex } = this.pagination;
+      const data = [...this.data];
+      const first = pageSize * (pageIndex - 1);
+      const end = pageSize * pageIndex;
+      this.tableData = data.slice(first, end);
+      this.pagination.total = data.length;
+    } else {
+      this.tableData = this.data || [];
+    }
+    this.initCheck();
+  }
+
+  /**
+   * 获取列表数据
+   * @param reset 是否重置列表
+   */
+  getInterfaceList(reset: boolean = false, param: any = {}): void {
+    this.loading = true;
+    const requestParams = {
+      pageNo: this.pagination.pageIndex,
+      pageSize: this.pagination.pageSize,
+      ...this.params,
+      ...param
+    };
+    this.api(requestParams).subscribe(res => {
+      if (res.success) {
+        const data = res.data;
+        if (data) {
+          this.pagination.total = data[this.totalKey];
+          this.tableData = data[this.contentKey].map((item, i) => {
+            return {
+              ...item,
+              number: (data.pageNo - 1) * this.pagination.pageSize + i + 1
+            };
+          });
+          this.initCheck();
+        }
+      }
+      this.loading = false;
+    });
   }
 
   /**
@@ -116,38 +179,5 @@ export class AngTableComponent implements OnInit, OnChanges {
    */
   clearChecked() {
     this.checkAll(false);
-  }
-
-  /**
-   * 获取列表数据
-   * @param reset 是否重置列表
-   */
-  getList(reset: boolean = false, param: any = {}): void {
-    if (reset) {
-      this.pagination.pageIndex = 1;
-    }
-    this.loading = true;
-    const requestParams = {
-      pageNo: this.pagination.pageIndex,
-      pageSize: this.pagination.pageSize,
-      ...this.params,
-      ...param
-    };
-    this.api(requestParams).subscribe(res => {
-      if (res.success) {
-        const data = res.data;
-        if (data) {
-          this.pagination.total = data[this.totalKey];
-          this.tableData = data[this.contentKey].map((item, i) => {
-            return {
-              ...item,
-              number: (data.pageNo - 1) * this.pagination.pageSize + i + 1
-            };
-          });
-          this.initCheck();
-        }
-      }
-      this.loading = false;
-    });
   }
 }

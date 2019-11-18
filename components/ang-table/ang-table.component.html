@@ -12,13 +12,13 @@
     [(nzPageIndex)]="pagination.pageIndex"
     [(nzPageSize)]="pagination.pageSize"
     (nzPageIndexChange)="getList()"
-    (nzPageSizeChange)="getList(true)"
     [nzFooter]="footer">
     <thead>
       <tr>
         <th
           *ngIf="showSelect"
           nzLeft="0px"
+          nzWidth="80px"
           nzShowCheckbox
           [(nzChecked)]="isAllDisplayDataChecked"
           [nzIndeterminate]="isIndeterminate"
@@ -41,7 +41,10 @@
           [(nzChecked)]="mapOfCheckedId[data.id]"
           [nzDisabled]="data.disabled"
           (nzCheckedChange)="refreshStatus()"></td>
-        <td *ngFor="let item of tableColumns;index as index" [nzAlign]="item.align" [nzLeft]="item.left"
+        <td
+          *ngFor="let item of tableColumns;index as index"
+          [nzAlign]="item.align"
+          [nzLeft]="item.left"
           [nzRight]="item.right">
           <span *ngIf="!item.render">{{item.format ? item.format(data) : data[item.key]}}</span>
           <ng-template [ngIf]="item.render" [ngTemplateOutlet]="item.render"

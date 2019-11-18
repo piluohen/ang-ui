@@ -12,24 +12,22 @@ export class LayoutComponent implements OnInit {
 
   menusList: any[] = [
     {
-      title: 'demo', icon: 'dashboard', open: true,
+      title: 'demo',
+      icon: 'dashboard',
+      open: true,
       children: [
         { title: 'color', path: '/demo/color' },
         { title: 'ang-button', path: '/demo/ang-button' },
         { title: 'ang-countup', path: '/demo/ang-countup' },
         { title: 'ang-preview', path: '/demo/ang-preview' },
         { title: 'ang-scroll-list', path: '/demo/ang-scroll-list' },
-        { title: 'ang-checkbox-group', path: '/demo/ang-checkbox-group' }
+        { title: 'ang-checkbox-group', path: '/demo/ang-checkbox-group' },
+        { title: 'ang-table', path: '/demo/ang-table' }
       ]
     }
   ];
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {
-  }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
