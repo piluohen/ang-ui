@@ -5,14 +5,14 @@
   align-items: center;
 }
 
-@mixin alignCenter {
+@mixin alignItems($type: center) {
   display: flex;
-  align-items: center;
+  align-items: $type;
 }
 
-@mixin  justifyCenter {
+@mixin justifyContent($type: center) {
   display: flex;
-  justify-content: center;
+  justify-content: $type;
 }
 
 @mixin ellipsis {
