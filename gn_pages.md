@@ -1,6 +1,6 @@
 ## 打包发布命令
 
-``` BASH
+```BASH
 # 切换分支到gh_pages
 
 # 打包
@@ -23,10 +23,9 @@ git subtree push --prefix dist/ang-ui origin gh-pages
 
 解决方案：
 
-``` HTML
+```HTML
 <!-- 打开idnex.html -->
 <base href="/">
 <!-- 修改为 -->
-<base href="/">
+<base href="./">
 ```
-
